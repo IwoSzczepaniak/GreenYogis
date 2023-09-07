@@ -1,0 +1,13 @@
+Do sekcji start dać galerię fot
+
+Dodać strony-kalendarze dla stacjo i dla online
+Dodać strony-opisy dla każdego prowadzącego
+
+// wspólne ustalenia
+
+Wcale nie musi być kalendarz, chociaż byłby spoko, może być nawet lista zajęć.
+Najbardziej chodzi o przydzielanie "punktów" i tak żeby płacili z góry. 
+-> osobna karta na kalendarz
+-> osobna karta na zakup karnetów - tam dać system powiadomień
+
+Spróbować zrobić smooth przejście między zdjęciem a tłem -> strona startowa i reszta

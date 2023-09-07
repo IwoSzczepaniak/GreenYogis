@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GreenYogis</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Righteous&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
+<body>
+    <!-- start -->
+    <section class="sub-header">
+    
+        <nav>
+            <div class="nav-links" id="navLinks">
+                <i class="glyphicon glyphicon-remove" onclick="hideMenu()"></i>
+                <ul>
+                    <li><a href = "index.html"> START</a></li>
+                    <li><a href = "about.html"> O NAS</a></li>
+                    <li><a href = "courses.html"> ZAJĘCIA</a></li>
+                    <li><a href = "shop.html"> SKLEP</a></li>
+                    <li><a href = "photos.html"> GALERIA</a></li>
+                    <li><a href = "contact.html"> KONTAKT</a></li>
+                </ul>
+
+            </div>
+            <a href="index.html"><img src="images/logo.png"></a>
+          
+            <i class="glyphicon glyphicon-chevron-left" onclick="showMenu()"></i>
+
+        </nav>
+
+        <div class="text-box">
+            <h1>
+                Przemek
+            </h1>
+        </div>
+
+    </section>
+
+    <!-- JS for menu -->
+    <script>
+        var navLinks = document.getElementById("navLinks")
+
+        function showMenu(){
+            navLinks.style.right = "0";
+        }
+        function hideMenu(){
+            navLinks.style.right = "-70%";
+        }
+
+    </script>
+
+    
+    <!-- footer -->
+    <section class="footer">
+        <p class="invite">Zapraszamy na social media GreenYogis!</p>
+        <div class="icons">
+            <a href="https://www.facebook.com/profile.php?id=100077419555698" target="_blank">
+                <i class="fa fa-facebook"></i>
+            </a>
+            <a href="https://www.instagram.com/green.yogis/" target="_blank">
+                <i class="fa fa-instagram"></i>
+            </a>
+            <a href="https://goo.gl/maps/QxFZ5XkYLD5A6iQ28" target="_blank">
+                <i class="fa fa-globe"></i>
+            </a>
+            
+        </div>
+        <p>
+            GreenYogis 2023
+            <i class="glyphicon glyphicon-registration-mark"></i>
+        </p>
+    </section>
+
+</body>
+</html>
