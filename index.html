@@ -181,25 +181,15 @@
 
 
     <!-- footer -->
-    <section class="footer">
-        <p class="invite">Zapraszamy na social media GreenYogis!</p>
-        <div class="icons">
-            <a href="https://www.facebook.com/profile.php?id=100077419555698" target="_blank">
-                <i class="fa fa-facebook"></i>
-            </a>
-            <a href="https://www.instagram.com/green.yogis/" target="_blank">
-                <i class="fa fa-instagram"></i>
-            </a>
-            <a href="https://goo.gl/maps/QxFZ5XkYLD5A6iQ28" target="_blank">
-                <i class="fa fa-globe"></i>
-            </a>
-            
-        </div>
-        <p>
-            GreenYogis 2023
-            <i class="glyphicon glyphicon-registration-mark"></i>
-        </p>
-    </section>
+    <div id="footer-container"></div>
+    <script>
+        // Fetch and include the footer using JavaScript
+        fetch('common/footer.html')
+            .then(response => response.text())
+            .then(html => {
+                document.getElementById('footer-container').innerHTML = html;
+            });
+    </script>
 
 
 </body>

@@ -12,70 +12,41 @@
 </head>
 
 <body>
-    <!-- start -->
+    <!-- import header from header.html-->
     <section class="sub-header">
+        <div id="header-container"></div>
+        <script>
+            fetch('header.html')
+                .then(response => response.text())
+                .then(html => {
+                    document.getElementById('header-container').outerHTML = html;})
+                
+                function showMenu() {
+                var navLinks = document.getElementById("navLinks");
+                navLinks.style.right = "0";
+                }
+                
+                function hideMenu() {
+                    var navLinks = document.getElementById("navLinks");
+                    navLinks.style.right = "-70%";
+                }
+                ;
+        </script>
     
-        <nav>
-            <div class="nav-links" id="navLinks">
-                <i class="glyphicon glyphicon-remove" onclick="hideMenu()"></i>
-                <ul>
-                    <li><a href = "index.html"> START</a></li>
-                    <li><a href = "about.html"> O NAS</a></li>
-                    <li><a href = "courses.html"> ZAJĘCIA</a></li>
-                    <li><a href = "shop.html"> SKLEP</a></li>
-                    <li><a href = "photos.html"> GALERIA</a></li>
-                    <li><a href = "contact.html"> KONTAKT</a></li>
-                </ul>
-
-            </div>
-            <a href="index.html"><img src="images/logo.png"></a>
-          
-            <i class="glyphicon glyphicon-chevron-left" onclick="showMenu()"></i>
-
-        </nav>
-
         <div class="text-box">
-            <h1>
-                Dominika
-            </h1>
+            <h1>Dominika</h1>
         </div>
-
     </section>
-
-    <!-- JS for menu -->
-    <script>
-        var navLinks = document.getElementById("navLinks")
-
-        function showMenu(){
-            navLinks.style.right = "0";
-        }
-        function hideMenu(){
-            navLinks.style.right = "-70%";
-        }
-
-    </script>
-
     
     <!-- footer -->
-    <section class="footer">
-        <p class="invite">Zapraszamy na social media GreenYogis!</p>
-        <div class="icons">
-            <a href="https://www.facebook.com/profile.php?id=100077419555698" target="_blank">
-                <i class="fa fa-facebook"></i>
-            </a>
-            <a href="https://www.instagram.com/green.yogis/" target="_blank">
-                <i class="fa fa-instagram"></i>
-            </a>
-            <a href="https://goo.gl/maps/QxFZ5XkYLD5A6iQ28" target="_blank">
-                <i class="fa fa-globe"></i>
-            </a>
-            
-        </div>
-        <p>
-            GreenYogis 2023
-            <i class="glyphicon glyphicon-registration-mark"></i>
-        </p>
-    </section>
-
+    <div id="footer-container"></div>
+    <script>
+        // Fetch and include the footer using JavaScript
+        fetch('common/footer.html')
+            .then(response => response.text())
+            .then(html => {
+                document.getElementById('footer-container').innerHTML = html;
+            });
+    </script>
 </body>
 </html>
