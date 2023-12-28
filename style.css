@@ -39,10 +39,6 @@ nav{
 .nav-links ul li a{
     color: #fff;
     text-decoration: none;
-    font-size: 13px;
-}
-
-.header .nav-links ul li a{
     font-size: 17px;
 }
 
@@ -408,31 +404,7 @@ nav .glyphicon{
         height: 60vh;
     }
 }
-/* 
-.header-container{
-    height: 50vh;
-    width: 100%;
-    background-image: linear-gradient(rgba(4,9,30,0.7), rgba(85, 85, 27, 0.7)),url(images/about_banner.jpeg);
-    background-position: center;
-    background-size: cover;
-    color: #fff;
-    position: relative;
-}
 
-.header-container nav img{
-    width: 110px;
-    margin-top: -20px;
-}
-
-.header-container h1{
-    font-size: 70px;
-}
-
-@media(max-width: 800px) {
-    .header-container{
-        height: 60vh;
-    }
-} */
 
 /* contact page */
 
