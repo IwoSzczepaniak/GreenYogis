@@ -373,7 +373,7 @@ nav .glyphicon{
 }
 
 /* about us page*/
-/* 
+
 .sub-header{
     height: 50vh;
     width: 100%;
@@ -391,7 +391,7 @@ nav .glyphicon{
 
 .sub-header h1{
     font-size: 70px;
-} */
+}
 
 .clr-btn{
     border: 1px solid #89920d;
@@ -403,11 +403,11 @@ nav .glyphicon{
     color:#fff
 }
 
-/* @media(max-width: 800px) {
+@media(max-width: 800px) {
     .sub-header{
         height: 60vh;
     }
-} */
+}
 
 .header-container{
     height: 50vh;
