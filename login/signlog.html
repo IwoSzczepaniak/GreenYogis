@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+	<title>Tworzenie konta i logowanie</title>
+	<link rel="stylesheet" type="text/css" href="signlog_style.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+
+<div class="container" id="container">
+<div class="form-container sign-up-container">
+
+	<form method="POST" action="signup.php">
+		<h1>Załóż konto</h1>
+		<span>lub użyj swojego adresu e-mail do rejestracji</span>
+		<input type="text" name="name" placeholder="Imię">
+		<input type="email" name="email" placeholder="E-mail">
+		<input type="password" name="password" placeholder="Hasło">
+		<button>Zarejestruj się</button>
+	</form>
+</div>
+<div class="form-container sign-in-container">
+	<form action="#">
+		<h1>Zaloguj się</h1>
+		<span>lub użyj swojego konta</span>
+		<input type="email" name="email" placeholder="E-mail">
+		<input type="password" name="password" placeholder="Hasło">
+		<a href="#">Zapomniałeś hasła?</a>
+
+	<button>Zaloguj się</button>
+	</form>
+</div>
+<div class="overlay-container">
+	<div class="overlay">
+		<div class="overlay-panel overlay-left">
+			<h1>Witaj ponownie!</h1>
+			<p>Zaloguj się, by uzyskać dostęp do swojego konta</p>
+			<button class="ghost" id="signIn">Zaloguj się</button>
+		</div>
+		<div class="overlay-panel overlay-right">
+			<h1>Cześć!</h1>
+			<p>Wprowadź swoje dane i zacznij podróż z nami</p>
+			<button class="ghost" id="signUp">Załóż konto</button>
+		</div>
+	</div>
+</div>
+</div>
+
+<script type="text/javascript">
+	const signUpButton = document.getElementById('signUp');
+	const signInButton = document.getElementById('signIn');
+	const container = document.getElementById('container');
+
+	signUpButton.addEventListener('click', () => {
+		container.classList.add("right-panel-active");
+	});
+	signInButton.addEventListener('click', () => {
+		container.classList.remove("right-panel-active");
+	});
+</script>
+
+
+</body>
+</html>
