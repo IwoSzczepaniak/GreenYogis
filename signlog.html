@@ -20,14 +20,14 @@
 	</form>
 </div>
 <div class="form-container sign-in-container">
-	<form action="#">
+	<form id="SignInForm">
 		<h1>Zaloguj się</h1>
 		<span>lub użyj swojego konta</span>
-		<input type="email" name="email" placeholder="E-mail">
-		<input type="password" name="password" placeholder="Hasło">
+		<input type="email" id="logEmail" placeholder="E-mail">
+		<input type="password" id="logPassword" placeholder="Hasło">
 		<a href="#">Zapomniałeś hasła?</a>
 
-	<button>Zaloguj się</button>
+	<button type = "submit">Zaloguj się</button>
 	</form>
 </div>
 <div class="overlay-container">
@@ -62,8 +62,8 @@
 <script type="module"> 
 	import { initializeApp } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js";
 	import { getAnalytics } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-analytics.js";
-	import { getDatabase, set, ref} from "https://www.gstatic.com/firebasejs/10.7.1/firebase-database.js";
-	import { getAuth, createUserWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-auth.js";
+	import { getDatabase, set, ref, get, child} from "https://www.gstatic.com/firebasejs/10.7.1/firebase-database.js";
+	import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-auth.js";
 
 	const firebaseConfig = {
 	  apiKey: "AIzaSyCYDx_WV45vRm4HP4JV_d0oGuEdC96Tf_A",
@@ -79,6 +79,7 @@
 	const app = initializeApp(firebaseConfig);
 	const database = getDatabase(app);
 	const auth = getAuth(app);
+	const dbref = ref(database);
 
 	let NameInp = document.getElementById('nameInp');
 	let EmailInp = document.getElementById('emailInp');
@@ -97,11 +98,32 @@
 			const errorMessage = error.message;
 			console.log(errorCode);
 			console.log(errorMessage);
+			alert(errorMessage);
 		})
+	}
+	MainForm.addEventListener('submit', RegisterUser);
 
+
+	let SignInForm = document.getElementById('SignInForm');
+	let LogEmail = document.getElementById('logEmail');
+	let LogPassword = document.getElementById('logPassword');
+
+	let SignInUser = evt => {
+		evt.preventDefault();
+		signInWithEmailAndPassword(auth, LogEmail.value, LogPassword.value)
+		.then((userCredential) => {
+			console.log(userCredential);
+		})
+		.catch((error) => {
+			const errorCode = error.code;
+			const errorMessage = error.message;
+			console.log(errorCode);
+			console.log(errorMessage);
+			alert(errorCode);
+		})
 	}
 
-	MainForm.addEventListener('submit', RegisterUser);
+	SignInForm.addEventListener('submit', SignInUser);
   </script>
 
 
