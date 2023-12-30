@@ -77,7 +77,7 @@
 	};
   
 	const app = initializeApp(firebaseConfig);
-	const database = getDatabase(app);
+	const database = getDatabase();
 	const auth = getAuth(app);
 	const dbref = ref(database);
 
@@ -92,6 +92,13 @@
 		createUserWithEmailAndPassword(auth, EmailInp.value, PasswordInp.value)
 		.then((userCredential) => {
 			console.log(userCredential);
+			set(ref(database, 'users/' + userCredential.user.uid), {
+				name: NameInp.value,
+				email: EmailInp.value,
+			})
+			window.location.href = "signlog.html";
+			alert("Stworzono konto!");
+
 		})
 		.catch((error) => {
 			const errorCode = error.code;
@@ -112,7 +119,19 @@
 		evt.preventDefault();
 		signInWithEmailAndPassword(auth, LogEmail.value, LogPassword.value)
 		.then((userCredential) => {
-			console.log(userCredential);
+			get(child(dbref, 'users/' + userCredential.user.uid)).then((snapshot) => {
+				if (snapshot.exists()) {
+					sessionStorage.setItem('user-info', JSON.stringify(
+						{
+							name: snapshot.val().name,
+							email: snapshot.val().email
+						}
+					));
+				}
+				sessionStorage.setItem('user-creds', JSON.stringify(userCredential.user));
+				window.location.href = "logged.html";
+				alert("Zalogowano pomyślnie");
+			})
 		})
 		.catch((error) => {
 			const errorCode = error.code;
